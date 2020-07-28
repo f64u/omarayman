@@ -37,15 +37,11 @@ export const SEO = ({ title = defaultTitle, description = defaultDescription, lo
 			"addressLocality": "${address.city}",
 			"addressRegion": "${address.region}",
 			"addressCountry": "${address.country}",
-			"postalCode": "${address.zipCode}"
 		},
 		"sameAs": [
 			"${socialLinks.twitter}",
-			"${socialLinks.google}",
-			"${socialLinks.youtube}",
-			"${socialLinks.linkedin}",
 			"${socialLinks.instagram}",
-			"${socialLinks.github}"
+			"${socialLinks.behance}"
 		]
   	}`;
 
@@ -63,7 +59,6 @@ export const SEO = ({ title = defaultTitle, description = defaultDescription, lo
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content={socialLinks.twitter} />
-      <meta name="twitter:site" content={social.twitter} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image:src" content={Thumbnail} />
