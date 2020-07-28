@@ -1,7 +1,8 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+title: Normal
+date: 2020-07-28T21:12:31.570Z
+description: just normal stuff
+image: avatar.jpg
 ---
 
 This is my first post on my new fake blog! How exciting!
