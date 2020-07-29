@@ -6,6 +6,12 @@ import * as Yup from 'yup';
 import { Button, Input } from 'components/common';
 import { Error, Center, InputField } from './styles';
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 export default () => (
   <Formik
     initialValues={{
@@ -23,19 +29,15 @@ export default () => (
       message: Yup.string().required('Message field is required'),
       recaptcha: Yup.string().required('Robots are not welcome yet!'),
     })}
-    onSubmit={async ({ name, email, message }, { setSubmitting, resetForm, setFieldValue }) => {
+    onSubmit={async (values, { setSubmitting, resetForm, setFieldValue }) => {
       try {
         await axios({
           method: 'POST',
-          url: `${process.env.GATSBY_PORTFOLIO_FORMIK_ENDPOINT}`,
+          url: `/`,
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
-          data: JSON.stringify({
-            name,
-            email,
-            message,
-          }),
+          body: encode({"form-name": "contact-form", ...values}),
         });
         setSubmitting(false);
         setFieldValue('success', true);
@@ -48,7 +50,7 @@ export default () => (
     }}
   >
     {({ values, touched, errors, setFieldValue, isSubmitting }) => (
-      <Form>
+      <Form name="contact-form" data-netlify>
         <InputField>
           <Input
             as={FastField}

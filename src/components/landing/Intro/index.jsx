@@ -16,7 +16,7 @@ export const Intro = () => {
           <h1>Hi There!</h1>
           <h4>I’m Omar and I’m a Graphic Designer!</h4>
           <Button as={AnchorLink} href="#contact">
-            Hire me
+            Contact me
           </Button>
         </Details>
         <Thumbnail>

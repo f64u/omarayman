@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { Container } from 'components/common';
 import { Wrapper, Section, Item } from './styles';
@@ -16,6 +16,10 @@ export const Works = () => {
       allMarkdownRemark {
         edges {
           node {
+            fields {
+              slug
+            }
+
             frontmatter {
               title
               image {
@@ -45,7 +49,7 @@ export const Works = () => {
           return (
             <Item>
               <Img fluid={node.frontmatter.image.childImageSharp.fluid} alt={node.frontmatter.title} className="image" />
-              <div className="middle"><div className="text" style={{color: theme === 'dark' ? '#212121' : '#fff'}}>{node.frontmatter.title}</div></div>
+              <div className="middle"><Link to={node.fields.slug}><div className="text" style={{color: theme === 'dark' ? '#212121' : '#fff'}}>{node.frontmatter.title}</div></Link></div>
             </Item>)
         })}
       </Section>
