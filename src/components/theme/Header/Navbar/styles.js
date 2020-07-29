@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 
 export const Brand = styled.a`
   color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+  font-size: 1.5em;
 
   @media (max-width: 960px) {
     mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};

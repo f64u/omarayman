@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { ThemeContext } from 'providers/ThemeProvider';
-import { Container, Card } from 'components/common';
-import { Wrapper, Section, Item, Content, Stats } from './styles';
+import { Container } from 'components/common';
+import { Wrapper, Section, Item } from './styles';
 import Img from "gatsby-image"
 
 export const Works = () => {
@@ -13,7 +13,7 @@ export const Works = () => {
     <StaticQuery
     query={graphql`
     {
-      allMarkdownRemark(limit: 6) {
+      allMarkdownRemark {
         edges {
           node {
             frontmatter {
@@ -22,7 +22,11 @@ export const Works = () => {
                 relativePath
                 childImageSharp {
                   fluid(maxWidth: 1000) {
-                    ...GatsbyImageSharpFluid
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
                   }
                 }
               }
@@ -35,7 +39,7 @@ export const Works = () => {
     `}
     render={data => ( 
     <Wrapper as={Container} id="projects">
-      <h2>Projects</h2>
+      <h2>Personal Work</h2>
       <Section>
         {data.allMarkdownRemark.edges.map(({node}) => {
           return (

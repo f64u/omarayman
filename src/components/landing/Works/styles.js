@@ -4,22 +4,6 @@ export const Wrapper = styled.div`
   padding: 2rem 0;
 `;
 
-// export const Grid = styled.div`
-//   display: grid;
-//   align-items: center;
-//   grid-template-columns: 25% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 25%; 
-//   grid-template-rows: 10% 300pt 250pt 10%;
-//   gap: 10px 5px;
-
-//   // @media (max-width: 960px) {
-//   //   grid-template-columns: repeat(2, 1fr);
-//   // }
-
-//   // @media (max-width: 680px) {
-//   //   grid-template-columns: 1fr;
-//   // }
-// `;
-
 export const Section = styled.section`
   line-height: 0;
     
@@ -52,6 +36,9 @@ export const Item = styled.div`
   height: 100%;
   overflow: hidden;
   position: relative;
+  margin-bottom: 4px;
+  cursor: pointer;
+
 
   .image {
     position: relative;
@@ -90,33 +77,4 @@ export const Item = styled.div`
   }
   
   
-`;
-
-export const Content = styled.div`
-  padding: 1rem 0;
-`;
-
-export const Stats = styled.div`
-  display: flex;
-  align-items: center;
-
-  div {
-    display: flex;
-    &:first-child {
-      margin-right: 0.5rem;
-    }
-
-    img {
-      margin: 0;
-    }
-
-    svg path {
-      fill: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
-    }
-
-    span {
-      color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
-      margin-left: 0.5rem;
-    }
-  }
 `;
