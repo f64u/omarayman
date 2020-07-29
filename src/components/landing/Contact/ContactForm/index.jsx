@@ -27,7 +27,9 @@ export default () => (
         .email('Invalid email')
         .required('Email field is required'),
       message: Yup.string().required('Message field is required'),
-      recaptcha: Yup.string().required('Robots are not welcome yet!'),
+      // recaptcha: Yup.string().required('Robots are not welcome yet!').nullable(),
+      recaptcha: Yup.string().nullable(),
+
     })}
     onSubmit={async (values, { setSubmitting, resetForm, setFieldValue }) => {
       try {
@@ -44,6 +46,7 @@ export default () => (
         setTimeout(() => resetForm(), 6000);
       } catch (err) {
         setSubmitting(false);
+        console.log(`error is `, err);
         setFieldValue('success', false);
 				alert('Something went wrong, please try again!') // eslint-disable-line
       }

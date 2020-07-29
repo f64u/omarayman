@@ -45,9 +45,9 @@ export const Works = () => {
     <Wrapper as={Container} id="#projects">
       <h2>Personal Work</h2>
       <Section>
-        {data.allMarkdownRemark.edges.map(({node}) => {
+        {data.allMarkdownRemark.edges.map(({node}, i) => {
           return (
-            <Item>
+            <Item key={i}>
               <Img fluid={node.frontmatter.image.childImageSharp.fluid} alt={node.frontmatter.title} className="image" />
               <div className="middle"><Link to={node.fields.slug}><div className="text" style={{color: theme === 'dark' ? '#212121' : '#fff'}}>{node.frontmatter.title}</div></Link></div>
             </Item>)
