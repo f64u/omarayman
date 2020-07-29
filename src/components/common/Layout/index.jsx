@@ -4,13 +4,13 @@ import { Footer, Header } from 'components/theme';
 import { Global } from './styles';
 import './fonts.css';
 
-export const Layout = ({ location, title, children }) => {
+export const Layout = ({ children, home }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
     <>
       <Global theme={theme} />
-      <Header />
+      <Header home={home} />
       {children}
       <Footer />
     </>

@@ -4,7 +4,7 @@ import { Intro, About, Contact, Works } from 'components/landing';
 import {graphql} from "gatsby"
 
 export default ({data}) => (
-  <Layout>
+  <Layout home>
     <SEO />
     <Intro />
     <About img={data.file.childImageSharp.fixed}/>

@@ -42,7 +42,7 @@ export const Works = () => {
     
     `}
     render={data => ( 
-    <Wrapper as={Container} id="projects">
+    <Wrapper as={Container} id="#projects">
       <h2>Personal Work</h2>
       <Section>
         {data.allMarkdownRemark.edges.map(({node}) => {

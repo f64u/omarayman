@@ -5,12 +5,12 @@ import { Wrapper, Details, Thumbnail } from './styles';
 import ContactForm from './ContactForm';
 
 export const Contact = () => (
-  <Wrapper as={Container} id="contact">
+  <Wrapper as={Container} id="#contact">
     <Details>
       <ContactForm />
     </Details>
     <Thumbnail>
-      <img src={contact} alt="I’m John and I’m a Backend & Devops engineer!" />
+      <img src={contact} alt="I’m Omar and I’m a Graphic Designer!" />
     </Thumbnail>
   </Wrapper>
 );

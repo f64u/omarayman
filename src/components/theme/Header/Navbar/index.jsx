@@ -5,7 +5,7 @@ import { Container } from 'components/common';
 import NavbarLinks from '../NavbarLinks';
 import { Wrapper, Brand } from './styles';
 
-const Navbar = () => {
+const Navbar = ({home}) => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -13,7 +13,7 @@ const Navbar = () => {
       <Brand as={Link} to="/" theme={theme}>
         Omar Ayman
       </Brand>
-      <NavbarLinks desktop />
+      <NavbarLinks desktop home={home} />
     </Wrapper>
   );
 };
