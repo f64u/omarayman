@@ -37,7 +37,7 @@ export default () => (
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
           },
-          body: encode({"form-name": "contact-form", ...values}),
+          data: encode({"form-name": "contact-form", ...values}),
         });
         setSubmitting(false);
         setFieldValue('success', true);
