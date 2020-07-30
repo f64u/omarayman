@@ -1,9 +1,9 @@
 module.exports = {
-  defaultTitle: 'Omar Ayman',
+  defaultTitle: 'Omar El Sherbiny',
   logo: 'https://omarayman.me/favicon/favicon-512.png',
-  author: 'Omar Ayman',
-  url: 'https://omarayman.me',
-  legalName: 'Omar Ayman',
+  author: 'Omar El Sherbiny',
+  url: 'https://omarelsherbiny.com',
+  legalName: 'Omar El Sherbiny',
   defaultDescription: 'I’m Omar and I’m a Graphic Designer!',
   socialLinks: {
     facebook: 'https://facebook.com/the.jokehunter',
