@@ -19,7 +19,7 @@ const NavbarLinks = ({ desktop, home }) => {
       {!home &&
       <>
       <Link to="/#about">About</Link>
-      <Link to="/#projects">Personal Work</Link>
+      <Link to="/gallery">Personal Work</Link>
       <Link to="/#contact">Contact</Link>
       </>
       }

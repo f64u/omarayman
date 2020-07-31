@@ -8,7 +8,7 @@ export default ({data}) => (
     <SEO />
     <Intro />
     <About img={data.file.childImageSharp.fixed}/>
-    <Works />
+    <Works limit/>
     <Contact />
   </Layout>
 );

@@ -5,18 +5,30 @@ export const Wrapper = styled.div`
 `;
 
 export const Section = styled.section`
-  .my-masonry-grid {  
-    display: flex;
-    width: auto;
-  }
+`
 
-  .my-masonry-grid_column {
-    background-clip: padding-box;
-  }
+export const Center = styled.div`
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
 `
 
 export const Item = styled.div`
   position: relative;
+  width: 25%;
+
+  @media (max-width: 1000px) {
+    width: calc(100% / 3);
+  }
+  @media (max-width: 800px) {
+    width: 50%;
+  }
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 
   .image {
     opacity: 1;
