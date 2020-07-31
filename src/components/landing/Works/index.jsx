@@ -5,9 +5,17 @@ import { Container } from 'components/common';
 import { Wrapper, Section, Item } from './styles';
 import Img from "gatsby-image"
 
+import Masonry from "react-masonry-css"
+
 export const Works = () => {
   const { theme } = useContext(ThemeContext);
 
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1
+  }
 
   return (
     <StaticQuery
@@ -45,13 +53,19 @@ export const Works = () => {
     <Wrapper as={Container} id="#projects">
       <h2>Personal Work</h2>
       <Section>
-        {data.allMarkdownRemark.edges.map(({node}, i) => {
-          return (
-            <Item key={i}>
-              <Img fluid={node.frontmatter.image.childImageSharp.fluid} alt={node.frontmatter.title} className="image" />
-              <div className="middle"><Link to={node.fields.slug}><div className="text" style={{color: theme === 'dark' ? '#212121' : '#fff'}}>{node.frontmatter.title}</div></Link></div>
-            </Item>)
-        })}
+        <Masonry 
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column">
+            {data.allMarkdownRemark.edges.map(({node}, i) => {
+              return (
+                <Item key={i}>
+                  <Img fluid={node.frontmatter.image.childImageSharp.fluid} alt={node.frontmatter.title} className="image" />
+                  <div className="middle"><Link to={node.fields.slug}><div className="text" style={{color: theme === 'dark' ? '#212121' : '#fff'}}>{node.frontmatter.title}</div></Link></div>
+                </Item>
+                )
+            })}
+        </Masonry>
       </Section>
     </Wrapper>)
     } />);

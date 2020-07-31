@@ -5,41 +5,25 @@ export const Wrapper = styled.div`
 `;
 
 export const Section = styled.section`
-  line-height: 0;
-    
-  column-count:         4;
-  column-gap:           4px;
+  .my-masonry-grid {  
+    display: flex;
+    width: auto;
+  }
 
-  @media (max-width: 1200px) {
-    column-count:         3;
+  .my-masonry-grid_column {
+    background-clip: padding-box;
   }
-  @media (max-width: 1000px) {
-    column-count:         2;
-  }
-  @media (max-width: 800px) {
-    column-count:         1;
-    }
 `
 
 export const Item = styled.div`
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   position: relative;
-  display: block;
-  margin-bottom: 4px;
-  cursor: pointer;
-
 
   .image {
-    position: relative;
     opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
   }
+  
   
   .middle {
     position: absolute;
